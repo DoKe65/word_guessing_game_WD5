@@ -6,7 +6,7 @@
 :root {
   --color-win: #78CF82;
   --color-lose: #D94545;
-  --color-start: #9cbced;
+  --color-start: #7caad1;
   --color-neutral: #1736a1;
   --color-neutral-light: #e2f0f4;
   --color-keys: #37474F;
@@ -48,6 +48,7 @@ h2 {
   font-family: 'Open Sans', sans-serif;
   font-size: var(--font-size-large);
   margin: 0;
+  -webkit-text-stroke: 2px var(--color-gradient-one);
 }
 
 button {

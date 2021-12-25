@@ -59,6 +59,7 @@ function checkLetter(charBtn) {
   return char;
 }
 
+
 function clearGame () {
   // reset missed lives
   missed = 0;
@@ -81,15 +82,21 @@ function clearGame () {
 function checkWin () {
   const foundLettersLength = phrasesUl.querySelectorAll(".show").length;
   const phraseLength = phrasesUl.querySelectorAll(".letter").length;
+  const titel = startScreen.querySelector(".title");
+  const startBtn = startScreen.querySelector(".btn__reset");
 
   if(foundLettersLength === phraseLength) {
     clearGame();
     startScreen.className = "win";
     startScreen.style.display = "flex";
+    titel.textContent = "Congratulations, you're a champ!";
+    startBtn.textContent = "I want to play again!";
   } else if (missed >= 5) {
     clearGame();
     startScreen.className = "lose";
     startScreen.style.display = "flex";
+    titel.textContent = "Oh no, you lost! Want to try again?";
+    startBtn.textContent = "Yes! Start again!";
   }
 }
 
