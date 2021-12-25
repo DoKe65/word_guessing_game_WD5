@@ -1,16 +1,20 @@
 /* Main styles */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:100,300,700');
 
 /* Variables */
 
 :root {
   --color-win: #78CF82;
   --color-lose: #D94545;
-  --color-start: #5b85b7;
-  --color-neutral: #445069;
-  --color-neutral-light: #D2D2D2;
+  --color-start: #9cbced;
+  --color-neutral: #1736a1;
+  --color-neutral-light: #e2f0f4;
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
+  --color-gradient-one: #ff3a2f;
+  --color-gradient-two: #a41910;
+  --color-gradient-three: #ca261c;
+  --color-gradient-four: #db2116;
   --font-size-large: 60px;
   --font-size-medium: 20px;
   --transition: all .2s ease-in-out;
@@ -27,6 +31,10 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background-image: url("../images/lakeside.jpg");
+  background-color: #00000047;
+  background-position: center;
+  background-blend-mode: multiply;
 }
 
 li, ol, ul {
@@ -79,12 +87,17 @@ button {
 
 .letter {
   font-size: var(--font-size-medium);
+  font-weight: 100;
   height: 65px;
   width: 65px;
   padding: 20px 1px 0 1px;
   margin-right: 2px;
+  margin-bottom: 5px;
   color: transparent;
-  background: var(--color-neutral-light);
+  background:conic-gradient(#d7d7d7, #c3c3c3, #cccccc, #c6c6c6,
+								#d7d7d7, #c3c3c3, #cccccc, #c6c6c6,
+								#d7d7d7, #c3c3c3, #cccccc, #c6c6c6,
+								#d7d7d7, #c3c3c3, #cccccc, #c6c6c6);
   border-radius: 5px;
 }
 
@@ -93,8 +106,14 @@ button {
 }
 
 .show {
-  color: #000;
-  background-color: #76CE82;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: #fff;
+  background:conic-gradient(var(--color-gradient-one), var(--color-gradient-two), var(--color-gradient-three), var(--color-gradient-four),
+  								var(--color-gradient-one), var(--color-gradient-two), var(--color-gradient-three), var(--color-gradient-four),
+  								var(--color-gradient-one), var(--color-gradient-two), var(--color-gradient-three), var(--color-gradient-four),
+  								var(--color-gradient-one), var(--color-gradient-two), var(--color-gradient-three), var(--color-gradient-four));
+  transition: all 2s;
 }
 
 /* Keyboard */
@@ -109,6 +128,12 @@ button {
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
+}
+
+img {
+  margin: 0.8rem;
+  height: 60px;
+  width: auto;
 }
 
 .btn__reset {
